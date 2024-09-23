@@ -1,6 +1,11 @@
 # Orillusion Guide
 该仓库为学习 Orillusion 时的笔记，欢迎大家一起学习交流。
 
+## Node 版本
+```bash
+node -v
+v18.20.4
+```
 ## 创建 Vue 项目
 ```bash
 npm create vite@latest orillusion_guide --template vue
