@@ -3,7 +3,6 @@
 </template>
 
 <script setup lang="ts">
-
 import {
 	Engine3D,
 	Scene3D,
@@ -16,6 +15,7 @@ import {
 	DirectLight,
 	HoverCameraController,
 	AtmosphericComponent,
+	ComponentBase,
 } from "@orillusion/core";
 
 await Engine3D.init();
@@ -24,7 +24,7 @@ await Engine3D.init();
 let scene3D = new Scene3D();
 
 // 添加大气散射天空组件
-let sky = scene3D.addComponent(AtmosphericComponent);
+scene3D.addComponent(AtmosphericComponent);
 
 // 新建摄像机实例
 let cameraObj = new Object3D();
@@ -65,6 +65,16 @@ let view = new View3D();
 view.scene = scene3D;
 // 指定使用的相机
 view.camera = camera;
+
+
+class RotateScript extends ComponentBase {
+	public onUpdate() {
+		// update 生命周期，主循环每一帧执行
+		this.object3D.rotationY += 1;
+	}
+}
+
+obj.addComponent(RotateScript);
 
 Engine3D.startRenderView(view);
 
