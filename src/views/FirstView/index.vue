@@ -66,7 +66,6 @@ view.scene = scene3D;
 // 指定使用的相机
 view.camera = camera;
 
-
 class RotateScript extends ComponentBase {
 	public onUpdate() {
 		// update 生命周期，主循环每一帧执行
