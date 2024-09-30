@@ -33,4 +33,34 @@ export const constantRoute = [
             },
         ],
     },
+    {
+        path: "/animation",
+        name: "animation",
+        children: [
+            {
+                path: "/animation/light",
+                component: () =>
+                    import(
+                        "../views/Core/ScriptComponent/LightAnimation/index.vue"
+                    ),
+                name: "basic",
+            },
+            {
+                path: "/animation/material",
+                component: () =>
+                    import(
+                        "../views/Core/ScriptComponent/MaterialAnimation/index.vue"
+                    ),
+                name: "material",
+            },
+            {
+                path: "/animation/path",
+                component: () =>
+                    import(
+                        "../views/Core/ScriptComponent/PathAnimation/index.vue"
+                    ),
+                name: "path",
+            },
+        ],
+    },
 ];
